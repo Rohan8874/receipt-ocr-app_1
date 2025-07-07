@@ -1,29 +1,5 @@
-# Core Flask and web dependencies
-flask
-flask-cors
+Flask
 python-dotenv
-werkzeug
-jinja2
-
-# AI/ML and data processing
-google-generativeai
 pandas
-numpy
-
-# Data validation and serialization
-pydantic
-
-# File handling and utilities
-pillow
-openpyxl
-xlrd
-
-# Development and debugging
-debugpy
-pytest
-pytest-cov
-python-dotenv
-
-# Optional (for production)
-gunicorn
-gevent
+Werkzeug
+google-generativeai
