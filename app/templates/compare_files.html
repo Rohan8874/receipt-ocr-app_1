@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Files</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .compare-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container compare-container">
+        <h2 class="mb-4">Compare OCR Results</h2>
+        
+        <form action="/compare_files" method="POST">
+            <div class="form-group">
+                <label for="csvFile" class="form-label">Select CSV Ground Truth File:</label>
+                <select class="form-select" id="csvFile" name="csv_file" required>
+                    <option value="">-- Select a file --</option>
+                    {% for file in csv_files %}
+                    <option value="{{ file }}">{{ file }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ocrFile" class="form-label">Select OCR Result File:</label>
+                <select class="form-select" id="ocrFile" name="ocr_file" required>
+                    <option value="">-- Select a file --</option>
+                    {% for file in ocr_files %}
+                    <option value="{{ file }}">{{ file }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Compare Files</button>
+            <a href="/" class="btn btn-outline-secondary">Back to Home</a>
+        </form>
+        
+        <div class="mt-4">
+            <a href="/compare_all" class="btn btn-outline-info">Compare All Files</a>
+        </div>
+    </div>
+</body>
+</html>
