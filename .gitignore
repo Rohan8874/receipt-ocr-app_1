@@ -1,0 +1,7 @@
+/env
+/.env
+/ocr_results
+/csv_results
+/uploads
+**/__pycache__/
+/.pyc
